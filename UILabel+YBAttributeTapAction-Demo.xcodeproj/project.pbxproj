@@ -220,6 +220,7 @@
 				TargetAttributes = {
 					0C4B4E9C1D264AEE00B3F1C4 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4M743M97JA;
 					};
 					0C4B4EB51D264AEE00B3F1C4 = {
 						CreatedOnToolsVersion = 7.3;
@@ -427,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -512,6 +515,7 @@
 				0C4B4ECC1D264AEE00B3F1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C4B4ECD1D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +524,7 @@
 				0C4B4ECF1D264AEE00B3F1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C4B4ED01D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				0C4B4ED21D264AEE00B3F1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
