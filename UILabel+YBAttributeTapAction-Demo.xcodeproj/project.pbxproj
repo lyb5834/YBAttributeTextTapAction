@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA11D264AEE00B3F1C4 /* main.m */; };
+		0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */; };
+		0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */; };
+		0C4B4EAB1D264AEE00B3F1C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA91D264AEE00B3F1C4 /* Main.storyboard */; };
+		0C4B4EAD1D264AEE00B3F1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B4EAC1D264AEE00B3F1C4 /* Assets.xcassets */; };
+		0C4B4EB01D264AEE00B3F1C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */; };
+		0C4B4EBB1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EBA1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m */; };
+		0C4B4EC61D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */; };
+		0C4B4ED61D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C4B4EB71D264AEE00B3F1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C4B4E951D264AEE00B3F1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C4B4E9C1D264AEE00B3F1C4;
+			remoteInfo = "UILabel+YBAttributeTapAction-Demo";
+		};
+		0C4B4EC21D264AEE00B3F1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C4B4E951D264AEE00B3F1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C4B4E9C1D264AEE00B3F1C4;
+			remoteInfo = "UILabel+YBAttributeTapAction-Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C4B4E9D1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4B4EA11D264AEE00B3F1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0C4B4EA61D264AEE00B3F1C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0C4B4EAA1D264AEE00B3F1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C4B4EAC1D264AEE00B3F1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C4B4EAF1D264AEE00B3F1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C4B4EB11D264AEE00B3F1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C4B4EB61D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4B4EBA1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabel_YBAttributeTapAction_DemoTests.m; sourceTree = "<group>"; };
+		0C4B4EBC1D264AEE00B3F1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C4B4EC11D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabel_YBAttributeTapAction_DemoUITests.m; sourceTree = "<group>"; };
+		0C4B4EC71D264AEE00B3F1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C4B4ED41D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTapAction.h"; sourceTree = "<group>"; };
+		0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTapAction.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C4B4E9A1D264AEE00B3F1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EB31D264AEE00B3F1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EBE1D264AEE00B3F1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C4B4E941D264AEE00B3F1C4 = {
+			isa = PBXGroup;
+			children = (
+				0C4B4E9F1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */,
+				0C4B4EB91D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests */,
+				0C4B4EC41D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests */,
+				0C4B4E9E1D264AEE00B3F1C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C4B4E9E1D264AEE00B3F1C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4E9D1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo.app */,
+				0C4B4EB61D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests.xctest */,
+				0C4B4EC11D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C4B4E9F1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4ED31D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction */,
+				0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */,
+				0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */,
+				0C4B4EA61D264AEE00B3F1C4 /* ViewController.h */,
+				0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */,
+				0C4B4EA91D264AEE00B3F1C4 /* Main.storyboard */,
+				0C4B4EAC1D264AEE00B3F1C4 /* Assets.xcassets */,
+				0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */,
+				0C4B4EB11D264AEE00B3F1C4 /* Info.plist */,
+				0C4B4EA01D264AEE00B3F1C4 /* Supporting Files */,
+			);
+			path = "UILabel+YBAttributeTapAction-Demo";
+			sourceTree = "<group>";
+		};
+		0C4B4EA01D264AEE00B3F1C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4EA11D264AEE00B3F1C4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C4B4EB91D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4EBA1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m */,
+				0C4B4EBC1D264AEE00B3F1C4 /* Info.plist */,
+			);
+			path = "UILabel+YBAttributeTapAction-DemoTests";
+			sourceTree = "<group>";
+		};
+		0C4B4EC41D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */,
+				0C4B4EC71D264AEE00B3F1C4 /* Info.plist */,
+			);
+			path = "UILabel+YBAttributeTapAction-DemoUITests";
+			sourceTree = "<group>";
+		};
+		0C4B4ED31D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4ED41D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.h */,
+				0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.m */,
+			);
+			path = "UILabel+YBAttributeTapAction";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C4B4E9C1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C4B4ECA1D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-Demo" */;
+			buildPhases = (
+				0C4B4E991D264AEE00B3F1C4 /* Sources */,
+				0C4B4E9A1D264AEE00B3F1C4 /* Frameworks */,
+				0C4B4E9B1D264AEE00B3F1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UILabel+YBAttributeTapAction-Demo";
+			productName = "UILabel+YBAttributeTapAction-Demo";
+			productReference = 0C4B4E9D1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0C4B4EB51D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C4B4ECD1D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoTests" */;
+			buildPhases = (
+				0C4B4EB21D264AEE00B3F1C4 /* Sources */,
+				0C4B4EB31D264AEE00B3F1C4 /* Frameworks */,
+				0C4B4EB41D264AEE00B3F1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C4B4EB81D264AEE00B3F1C4 /* PBXTargetDependency */,
+			);
+			name = "UILabel+YBAttributeTapAction-DemoTests";
+			productName = "UILabel+YBAttributeTapAction-DemoTests";
+			productReference = 0C4B4EB61D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0C4B4EC01D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C4B4ED01D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoUITests" */;
+			buildPhases = (
+				0C4B4EBD1D264AEE00B3F1C4 /* Sources */,
+				0C4B4EBE1D264AEE00B3F1C4 /* Frameworks */,
+				0C4B4EBF1D264AEE00B3F1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C4B4EC31D264AEE00B3F1C4 /* PBXTargetDependency */,
+			);
+			name = "UILabel+YBAttributeTapAction-DemoUITests";
+			productName = "UILabel+YBAttributeTapAction-DemoUITests";
+			productReference = 0C4B4EC11D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C4B4E951D264AEE00B3F1C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = LYB;
+				TargetAttributes = {
+					0C4B4E9C1D264AEE00B3F1C4 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0C4B4EB51D264AEE00B3F1C4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0C4B4E9C1D264AEE00B3F1C4;
+					};
+					0C4B4EC01D264AEE00B3F1C4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0C4B4E9C1D264AEE00B3F1C4;
+					};
+				};
+			};
+			buildConfigurationList = 0C4B4E981D264AEE00B3F1C4 /* Build configuration list for PBXProject "UILabel+YBAttributeTapAction-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0C4B4E941D264AEE00B3F1C4;
+			productRefGroup = 0C4B4E9E1D264AEE00B3F1C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C4B4E9C1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */,
+				0C4B4EB51D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoTests */,
+				0C4B4EC01D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C4B4E9B1D264AEE00B3F1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C4B4EB01D264AEE00B3F1C4 /* LaunchScreen.storyboard in Resources */,
+				0C4B4EAD1D264AEE00B3F1C4 /* Assets.xcassets in Resources */,
+				0C4B4EAB1D264AEE00B3F1C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EB41D264AEE00B3F1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EBF1D264AEE00B3F1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C4B4E991D264AEE00B3F1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C4B4ED61D264B3F00B3F1C4 /* UILabel+YBAttributeTapAction.m in Sources */,
+				0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */,
+				0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */,
+				0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EB21D264AEE00B3F1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C4B4EBB1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C4B4EBD1D264AEE00B3F1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C4B4EC61D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C4B4EB81D264AEE00B3F1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C4B4E9C1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */;
+			targetProxy = 0C4B4EB71D264AEE00B3F1C4 /* PBXContainerItemProxy */;
+		};
+		0C4B4EC31D264AEE00B3F1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C4B4E9C1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */;
+			targetProxy = 0C4B4EC21D264AEE00B3F1C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0C4B4EA91D264AEE00B3F1C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C4B4EAA1D264AEE00B3F1C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C4B4EAF1D264AEE00B3F1C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C4B4EC81D264AEE00B3F1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0C4B4EC91D264AEE00B3F1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0C4B4ECB1D264AEE00B3F1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0C4B4ECC1D264AEE00B3F1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0C4B4ECE1D264AEE00B3F1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UILabel+YBAttributeTapAction-Demo.app/UILabel+YBAttributeTapAction-Demo";
+			};
+			name = Debug;
+		};
+		0C4B4ECF1D264AEE00B3F1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UILabel+YBAttributeTapAction-Demo.app/UILabel+YBAttributeTapAction-Demo";
+			};
+			name = Release;
+		};
+		0C4B4ED11D264AEE00B3F1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "UILabel+YBAttributeTapAction-Demo";
+			};
+			name = Debug;
+		};
+		0C4B4ED21D264AEE00B3F1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTapAction-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "UILabel+YBAttributeTapAction-Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C4B4E981D264AEE00B3F1C4 /* Build configuration list for PBXProject "UILabel+YBAttributeTapAction-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B4EC81D264AEE00B3F1C4 /* Debug */,
+				0C4B4EC91D264AEE00B3F1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C4B4ECA1D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B4ECB1D264AEE00B3F1C4 /* Debug */,
+				0C4B4ECC1D264AEE00B3F1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C4B4ECD1D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B4ECE1D264AEE00B3F1C4 /* Debug */,
+				0C4B4ECF1D264AEE00B3F1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0C4B4ED01D264AEE00B3F1C4 /* Build configuration list for PBXNativeTarget "UILabel+YBAttributeTapAction-DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C4B4ED11D264AEE00B3F1C4 /* Debug */,
+				0C4B4ED21D264AEE00B3F1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C4B4E951D264AEE00B3F1C4 /* Project object */;
+}
