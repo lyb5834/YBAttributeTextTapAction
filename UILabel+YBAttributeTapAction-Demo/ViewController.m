@@ -30,13 +30,13 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     [attributedString1 addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(12, 2)];
     [attributedString1 addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(17, 2)];
     
-    UILabel *ybLbabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, self.view.bounds.size.width - 20, 60)];
-    ybLbabel1.backgroundColor = [UIColor yellowColor];
-    ybLbabel1.numberOfLines = 2;
-    ybLbabel1.attributedText = attributedString1;
-    [self.view addSubview:ybLbabel1];
+    UILabel *ybLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, self.view.bounds.size.width - 20, 60)];
+    ybLabel1.backgroundColor = [UIColor yellowColor];
+    ybLabel1.numberOfLines = 2;
+    ybLabel1.attributedText = attributedString1;
+    [self.view addSubview:ybLabel1];
     
-    [ybLbabel1 yb_addAttributeTapActionWithStrings:@[@"点我",@"点我"] delegate:self];
+    [ybLabel1 yb_addAttributeTapActionWithStrings:@[@"点我",@"点我"] delegate:self];
     
     
     //需要点击的字符不同
@@ -46,13 +46,13 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(19, 10)];
     [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(35, 4)];
     
-    UILabel *ybLbabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, self.view.bounds.size.width - 20, 60)];
-    ybLbabel2.backgroundColor = [UIColor lightGrayColor];
-    ybLbabel2.numberOfLines = 2;
-    ybLbabel2.attributedText = attributedString2;
-    [self.view addSubview:ybLbabel2];
+    UILabel *ybLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, self.view.bounds.size.width - 20, 60)];
+    ybLabel2.backgroundColor = [UIColor lightGrayColor];
+    ybLabel2.numberOfLines = 2;
+    ybLabel2.attributedText = attributedString2;
+    [self.view addSubview:ybLabel2];
     
-    [ybLbabel2 yb_addAttributeTapActionWithStrings:@[@"www.yb.com",@"9527"] tapClicked:^(NSString *string, NSRange range, NSInteger index) {
+    [ybLabel2 yb_addAttributeTapActionWithStrings:@[@"www.yb.com",@"9527"] tapClicked:^(NSString *string, NSRange range, NSInteger index) {
         NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),index];
         YBAlertShow(message, @"取消");
     }];
