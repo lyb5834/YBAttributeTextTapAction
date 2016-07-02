@@ -15,7 +15,7 @@
 		0C4B4EB01D264AEE00B3F1C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */; };
 		0C4B4EBB1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EBA1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m */; };
 		0C4B4EC61D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */; };
-		0C4B4ED61D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.m */; };
+		0CCA65381D27543600F7F13F /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA65371D27543600F7F13F /* UILabel+YBAttributeTextTapAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		0C4B4EC11D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabel_YBAttributeTapAction_DemoUITests.m; sourceTree = "<group>"; };
 		0C4B4EC71D264AEE00B3F1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C4B4ED41D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
-		0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
+		0CCA65361D27543600F7F13F /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
+		0CCA65371D27543600F7F13F /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		0C4B4E9F1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				0C4B4ED31D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction */,
+				0CCA65351D27543600F7F13F /* UILabel+YBAttributeTextTapAction */,
 				0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */,
 				0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */,
 				0C4B4EA61D264AEE00B3F1C4 /* ViewController.h */,
@@ -144,14 +144,13 @@
 			path = "UILabel+YBAttributeTapAction-DemoUITests";
 			sourceTree = "<group>";
 		};
-		0C4B4ED31D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction */ = {
+		0CCA65351D27543600F7F13F /* UILabel+YBAttributeTextTapAction */ = {
 			isa = PBXGroup;
 			children = (
-				0C4B4ED41D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.h */,
-				0C4B4ED51D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.m */,
+				0CCA65361D27543600F7F13F /* UILabel+YBAttributeTextTapAction.h */,
+				0CCA65371D27543600F7F13F /* UILabel+YBAttributeTextTapAction.m */,
 			);
-			name = "UILabel+YBAttributeTextTapAction";
-			path = "UILabel+YBAttributeTapAction";
+			path = "UILabel+YBAttributeTextTapAction";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4B4ED61D264B3F00B3F1C4 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */,
+				0CCA65381D27543600F7F13F /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */,
 				0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */,
 			);

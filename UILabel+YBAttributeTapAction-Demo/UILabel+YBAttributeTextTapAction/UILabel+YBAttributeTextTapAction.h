@@ -1,5 +1,5 @@
 //
-//  UILabel+YBAttributeTapAction.h
+//  UILabel+YBAttributeTextTapAction.h
 //
 //  Created by LYB on 16/7/1.
 //  Copyright © 2016年 LYB. All rights reserved.
@@ -33,7 +33,7 @@
 
 
 
-@interface UILabel (YBAttributeTapAction)
+@interface UILabel (YBAttributeTextTapAction)
 
 /**
  *  给文本添加点击事件Block回调
