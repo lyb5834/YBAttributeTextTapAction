@@ -5,7 +5,7 @@
 ![(演示效果)](http://7xt3dd.com1.z0.glb.clouddn.com/attributeAction.gif)
 
 #使用方法
-  * `#import "UILabel+YBAttributeTapAction.h"`
+  * `#import "UILabel+YBAttributeTextTapAction.h"`
   * 设置 `label.attributedText = ？？？？？` 
   * 有2种回调方法，第一种是用代理回调，第二种是用block回调
   * 第一种 `[label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] delegate:self];` 

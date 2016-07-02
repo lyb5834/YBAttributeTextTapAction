@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UILabel+YBAttributeTapAction.h"
+#import "UILabel+YBAttributeTextTapAction.h"
 
 #define YBAlertShow(messageText,buttonName) \
 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:(messageText) \

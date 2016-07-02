@@ -1,11 +1,11 @@
 //
-//  UILabel+YBAttributeTapAction.m
+//  UILabel+YBAttributeTextTapAction.m
 //
 //  Created by LYB on 16/7/1.
 //  Copyright © 2016年 LYB. All rights reserved.
 //
 
-#import "UILabel+YBAttributeTapAction.h"
+#import "UILabel+YBAttributeTextTapAction.h"
 #import <objc/runtime.h>
 #import <CoreText/CoreText.h>
 #import <Foundation/Foundation.h>
@@ -14,7 +14,7 @@
 
 @end
 
-@implementation UILabel (YBAttributeTapAction)
+@implementation UILabel (YBAttributeTextTapAction)
 
 #pragma mark - AssociatedObjects
 
