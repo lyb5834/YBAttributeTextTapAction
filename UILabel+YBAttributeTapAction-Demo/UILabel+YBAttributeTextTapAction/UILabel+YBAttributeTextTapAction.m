@@ -221,26 +221,24 @@
     
     [strings enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        NSRange range = [totalStr rangeOfString:obj];
-        
-        if (range.length != 0) {
-            YBAttributeModel *model = [YBAttributeModel new];
-            model.range = range;
-            model.str = obj;
-            [weakSelf.attributeStrings addObject:model];
+        if (obj.length <= totalStr.length) {
             
-            totalStr = [totalStr stringByReplacingCharactersInRange:range withString:[weakSelf yb_getStringWithRange:range]];
+            for (int i = 0 ; i < totalStr.length - obj.length + 1; i++) {
+                
+                NSString *rangeStr = [totalStr substringWithRange:NSMakeRange(i, obj.length)];
+                
+                if ([rangeStr isEqualToString:obj]) {
+                    
+                    YBAttributeModel *model = [YBAttributeModel new];
+                    model.range = NSMakeRange(i, obj.length);
+                    model.str = obj;
+                    [weakSelf.attributeStrings addObject:model];
+                    
+                }
+            }
         }
     }];
-}
-
-- (NSString *)yb_getStringWithRange:(NSRange)range
-{
-    NSMutableString *string = [NSMutableString string];
-    for (int i = 0; i < range.length ; i++) {
-        [string appendString:@" "];
-    }
-    return string;
+    
 }
 
 @end
