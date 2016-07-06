@@ -28,6 +28,16 @@
     objc_setAssociatedObject(self, @selector(attributeStrings), attributeStrings, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (BOOL)isTapAction
+{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setIsTapAction:(BOOL)isTapAction
+{
+    objc_setAssociatedObject(self, @selector(isTapAction), @(isTapAction), OBJC_ASSOCIATION_ASSIGN);
+}
+
 - (void (^)(NSString *, NSRange, NSInteger))tapBlock
 {
     return objc_getAssociatedObject(self, _cmd);
@@ -71,6 +81,10 @@
 #pragma mark - touchAction
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    if (!self.isTapAction) {
+        return;
+    }
+    
     UITouch *touch = [touches anyObject];
     
     CGPoint point = [touch locationInView:self];
@@ -91,8 +105,11 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    if ([self yb_getTapFrameWithTouchPoint:point result:nil]) {
-        return self;
+    
+    if (self.isTapAction) {
+        if ([self yb_getTapFrameWithTouchPoint:point result:nil]) {
+            return self;
+        }
     }
     return nil;
 }
@@ -189,6 +206,13 @@
 #pragma mark - getRange
 - (void)yb_getRangesWithStrings:(NSArray <NSString *>  *)strings
 {
+    if (self.attributedText == nil) {
+        self.isTapAction = NO;
+        return;
+    }
+ 
+    self.isTapAction = YES;
+    
     __block  NSString *totalStr = self.attributedText.string;
     
     self.attributeStrings = [NSMutableArray array];
@@ -197,26 +221,24 @@
     
     [strings enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        NSRange range = [totalStr rangeOfString:obj];
-        
-        if (range.length != 0) {
-            YBAttributeModel *model = [YBAttributeModel new];
-            model.range = range;
-            model.str = obj;
-            [weakSelf.attributeStrings addObject:model];
+        if (obj.length <= totalStr.length) {
             
-            totalStr = [totalStr stringByReplacingCharactersInRange:range withString:[weakSelf yb_getStringWithRange:range]];
+            for (int i = 0 ; i < totalStr.length - obj.length + 1; i++) {
+                
+                NSString *rangeStr = [totalStr substringWithRange:NSMakeRange(i, obj.length)];
+                
+                if ([rangeStr isEqualToString:obj]) {
+                    
+                    YBAttributeModel *model = [YBAttributeModel new];
+                    model.range = NSMakeRange(i, obj.length);
+                    model.str = obj;
+                    [weakSelf.attributeStrings addObject:model];
+                    
+                }
+            }
         }
     }];
-}
-
-- (NSString *)yb_getStringWithRange:(NSRange)range
-{
-    NSMutableString *string = [NSMutableString string];
-    for (int i = 0; i < range.length ; i++) {
-        [string appendString:@" "];
-    }
-    return string;
+    
 }
 
 @end
