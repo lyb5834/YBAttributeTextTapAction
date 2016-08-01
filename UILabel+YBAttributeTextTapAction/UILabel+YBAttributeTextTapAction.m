@@ -121,7 +121,7 @@
     
     CGMutablePathRef Path = CGPathCreateMutable();
     
-    CGPathAddRect(Path, NULL, self.bounds);
+    CGPathAddRect(Path, NULL, self.frame);
     
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), Path, NULL);
     
@@ -141,6 +141,10 @@
     
     CGFloat verticalOffset = 0;
     
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
     for (CFIndex i = 0; i < count; i++) {
         CGPoint linePoint = origins[i];
         
@@ -154,10 +158,18 @@
         
         rect = CGRectOffset(rect, 0, verticalOffset);
         
+        NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
+        
+        CGFloat lineSpace = style.lineSpacing;
+        
+        CGFloat lineOutSpace = (self.bounds.size.height - lineSpace * (count - 1) -rect.size.height * count) / 2;
+        
+        rect.origin.y = lineOutSpace + rect.size.height * i + lineSpace * i;
+        
         if (CGRectContainsPoint(rect, point)) {
             
             CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect), point.y - CGRectGetMinY(rect));
-            
+
             CFIndex index = CTLineGetStringIndexForPosition(line, relativePoint);
             
             CGFloat offset;
@@ -198,9 +210,9 @@
     CGFloat descent = 0.0f;
     CGFloat leading = 0.0f;
     CGFloat width = (CGFloat)CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
-    CGFloat height = ascent + descent;
+    CGFloat height = ascent + fabs(descent) + leading;
     
-    return CGRectMake(point.x, point.y - descent, width, height);
+    return CGRectMake(point.x, point.y , width, height);
 }
 
 #pragma mark - getRange
@@ -212,6 +224,21 @@
     }
  
     self.isTapAction = YES;
+    
+    NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
+    
+    if (!style || style.lineSpacing == 0) {
+        
+        NSMutableParagraphStyle *sty = [[NSMutableParagraphStyle alloc] init];
+        
+        sty.lineSpacing = 1;
+        
+        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+        
+        [attStr addAttribute:NSParagraphStyleAttributeName value:sty range:NSMakeRange(0, self.attributedText.string.length)];
+        
+        self.attributedText = attStr;
+    }
     
     __block  NSString *totalStr = self.attributedText.string;
     

@@ -12,6 +12,13 @@
   * 第二种 `[label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] tapClicked:^(NSString *string, NSRange range,NSInteger index) {  coding more... }];`
   * PS:数组里输入的要点击的字符可以重复
 
+#V2.0.0重大更新
+  * 修复字体变小时，坐标计算不正确导致无法点击的bug
+
+#重要提醒
+  * 使用本库时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是字间距，如果不设置，则默认为1！
+  * 使用本库时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
+
 #版本支持
   * `xcode6.0+`
 
