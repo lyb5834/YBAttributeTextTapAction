@@ -141,10 +141,6 @@
     
     CGFloat verticalOffset = 0;
     
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    
     for (CFIndex i = 0; i < count; i++) {
         CGPoint linePoint = origins[i];
         
