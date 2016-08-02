@@ -15,6 +15,9 @@
 #V2.0.0重大更新
   * 修复字体变小时，坐标计算不正确导致无法点击的bug
 
+#V2.1.0更新
+  * 增加点击效果，默认是开启，关闭只需设置`label.enabledTapEffect = NO`即可
+
 #重要提醒
   * 使用本库时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是字间距，如果不设置，则默认为1！
   * 使用本库时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！

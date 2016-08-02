@@ -42,7 +42,6 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     
     [ybLabel1 yb_addAttributeTapActionWithStrings:@[@"点我",@"点我"] delegate:self];
     
-    
     //需要点击的字符不同
     NSString *label_text2 = @"您好！您是小明吗？你中奖了，领取地址“www.yb.com”,领奖码“9527”";
     NSMutableAttributedString *attributedString2 = [[NSMutableAttributedString alloc]initWithString:label_text2];
@@ -51,7 +50,7 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     [attributedString2 addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(35, 4)];
     
     UILabel *ybLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, self.view.bounds.size.width - 20, 60)];
-    ybLabel2.backgroundColor = [UIColor lightGrayColor];
+    ybLabel2.backgroundColor = [UIColor greenColor];
     ybLabel2.numberOfLines = 2;
     ybLabel2.attributedText = attributedString2;
     [self.view addSubview:ybLabel2];
@@ -60,6 +59,8 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
         NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),index];
         YBAlertShow(message, @"取消");
     }];
+    //设置是否有点击效果，默认是YES
+    ybLabel2.enabledTapEffect = NO;
 }
 
 //delegate

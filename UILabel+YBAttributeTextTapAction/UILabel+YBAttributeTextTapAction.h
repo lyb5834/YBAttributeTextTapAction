@@ -36,6 +36,11 @@
 @interface UILabel (YBAttributeTextTapAction)
 
 /**
+ *  是否打开点击效果，默认是打开
+ */
+@property (nonatomic, assign) BOOL enabledTapEffect;
+
+/**
  *  给文本添加点击事件Block回调
  *
  *  @param strings  需要添加的字符串数组

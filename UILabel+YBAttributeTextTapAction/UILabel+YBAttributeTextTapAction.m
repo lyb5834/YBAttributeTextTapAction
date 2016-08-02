@@ -28,6 +28,16 @@
     objc_setAssociatedObject(self, @selector(attributeStrings), attributeStrings, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (NSMutableDictionary *)effectDic
+{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setEffectDic:(NSMutableDictionary *)effectDic
+{
+    objc_setAssociatedObject(self, @selector(effectDic), effectDic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (BOOL)isTapAction
 {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -51,6 +61,27 @@
 - (id<YBAttributeTapActionDelegate>)delegate
 {
     return objc_getAssociatedObject(self, _cmd);
+}
+
+- (BOOL)enabledTapEffect
+{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setEnabledTapEffect:(BOOL)enabledTapEffect
+{
+    objc_setAssociatedObject(self, @selector(enabledTapEffect), @(enabledTapEffect), OBJC_ASSOCIATION_ASSIGN);
+    self.isTapEffect = enabledTapEffect;
+}
+
+- (BOOL)isTapEffect
+{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setIsTapEffect:(BOOL)isTapEffect
+{
+    objc_setAssociatedObject(self, @selector(isTapEffect), @(isTapEffect), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (void)setDelegate:(id<YBAttributeTapActionDelegate>)delegate
@@ -101,6 +132,13 @@
             [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
         }
         
+        if (self.isTapEffect) {
+            
+            [self yb_saveEffectDicWithRange:range];
+            
+            [self yb_tapEffectWithStatus:YES];
+        }
+        
     }];
 }
 
@@ -140,10 +178,6 @@
     CGAffineTransform transform = [self yb_transformForCoreText];
     
     CGFloat verticalOffset = 0;
-    
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
     
     for (CFIndex i = 0; i < count; i++) {
         CGPoint linePoint = origins[i];
@@ -199,6 +233,32 @@
     return NO;
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (self.isTapEffect) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self yb_tapEffectWithStatus:NO];
+            
+        });
+        
+    }
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (self.isTapEffect) {
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self yb_tapEffectWithStatus:NO];
+            
+        });
+        
+    }
+}
+
 - (CGAffineTransform)yb_transformForCoreText
 {
     return CGAffineTransformScale(CGAffineTransformMakeTranslation(0, self.bounds.size.height), 1.f, -1.f);
@@ -215,6 +275,37 @@
     return CGRectMake(point.x, point.y , width, height);
 }
 
+#pragma mark - tapEffect
+- (void)yb_tapEffectWithStatus:(BOOL)status
+{
+    if (self.isTapEffect) {
+        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+        
+        NSMutableAttributedString *subAtt = [[NSMutableAttributedString alloc] initWithAttributedString:[[self.effectDic allValues] firstObject]];
+        
+        NSRange range = NSRangeFromString([[self.effectDic allKeys] firstObject]);
+        
+        if (status) {
+            [subAtt addAttribute:NSBackgroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, subAtt.string.length)];
+            
+            [attStr replaceCharactersInRange:range withAttributedString:subAtt];
+        }else {
+            
+            [attStr replaceCharactersInRange:range withAttributedString:subAtt];
+        }
+        self.attributedText = attStr;
+    }
+}
+
+- (void)yb_saveEffectDicWithRange:(NSRange)range
+{
+    self.effectDic = [NSMutableDictionary dictionary];
+    
+    NSAttributedString *subAttribute = [self.attributedText attributedSubstringFromRange:range];
+    
+    [self.effectDic setObject:subAttribute forKey:NSStringFromRange(range)];
+}
+
 #pragma mark - getRange
 - (void)yb_getRangesWithStrings:(NSArray <NSString *>  *)strings
 {
@@ -224,6 +315,8 @@
     }
  
     self.isTapAction = YES;
+    
+    self.isTapEffect = YES;
     
     NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
     
