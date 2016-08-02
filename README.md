@@ -19,7 +19,7 @@
   * 增加点击效果，默认是开启，关闭只需设置`label.enabledTapEffect = NO`即可
 
 #重要提醒
-  * 使用本库时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是字间距，如果不设置，则默认为1！
+  * 使用本库时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是行间距，如果不设置，则默认为1！
   * 使用本库时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
 
 #版本支持
