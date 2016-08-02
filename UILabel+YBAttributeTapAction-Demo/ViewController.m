@@ -66,8 +66,8 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
 //delegate
 - (void)yb_attributeTapReturnString:(NSString *)string range:(NSRange)range index:(NSInteger)index
 {
-    NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),index];
-    YBAlertShow(message, @"取消");
+//    NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),index];
+//    YBAlertShow(message, @"取消");
 }
 
 - (void)didReceiveMemoryWarning {
