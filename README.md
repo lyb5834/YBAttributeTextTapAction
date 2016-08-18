@@ -13,7 +13,7 @@
   * PS:数组里输入的要点击的字符可以重复
 
 #CocoaPods支持
-  * 只需在podfile中输入 `pod 'YBAttributeTextTapAction', '~> 2.0.1'` 即可
+  * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
 
 #V2.0.0重大更新
   * 修复字体变小时，坐标计算不正确导致无法点击的bug
@@ -22,8 +22,8 @@
   * 增加点击效果，默认是开启，关闭只需设置`label.enabledTapEffect = NO`即可
 
 #重要提醒
-  * 使用本库时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是行间距，如果不设置，则默认为1！
-  * 使用本库时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
+  * 使用本框架时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是行间距，如果不设置，则默认为0！
+  * 使用本框架时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
 
 #版本支持
   * `xcode6.0+`
