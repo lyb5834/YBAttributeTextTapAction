@@ -132,11 +132,11 @@
             [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
         }
         
-        if (self.isTapEffect) {
+        if (weakSelf.isTapEffect) {
             
-            [self yb_saveEffectDicWithRange:range];
+            [weakSelf yb_saveEffectDicWithRange:range];
             
-            [self yb_tapEffectWithStatus:YES];
+            [weakSelf yb_tapEffectWithStatus:YES];
         }
         
     }];
