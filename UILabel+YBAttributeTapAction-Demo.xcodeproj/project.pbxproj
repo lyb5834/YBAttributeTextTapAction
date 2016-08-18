@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C3F7F271D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F7F261D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.m */; };
+		0C3F7F291D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3F7F281D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m */; };
 		0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA11D264AEE00B3F1C4 /* main.m */; };
 		0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */; };
 		0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0C3F7F251D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
-		0C3F7F261D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
+		0C3F7F281D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
 		0C4B4E9D1D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4B4EA11D264AEE00B3F1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0C3F7F251D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.h */,
-				0C3F7F261D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.m */,
+				0C3F7F281D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m */,
 			);
 			path = YBAttributeTextTapAction;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */,
-				0C3F7F271D65542B00FD1352 /* UILabel+YBAttributeTextTapAction.m in Sources */,
+				0C3F7F291D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */,
 				0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */,
 			);

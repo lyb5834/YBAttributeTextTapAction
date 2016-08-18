@@ -116,6 +116,10 @@
         return;
     }
     
+    if (objc_getAssociatedObject(self, @selector(enabledTapEffect))) {
+        self.isTapEffect = self.enabledTapEffect;
+    }
+    
     UITouch *touch = [touches anyObject];
     
     CGPoint point = [touch locationInView:self];
@@ -132,11 +136,11 @@
             [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
         }
         
-        if (weakSelf.isTapEffect) {
+        if (self.isTapEffect) {
             
-            [weakSelf yb_saveEffectDicWithRange:range];
+            [self yb_saveEffectDicWithRange:range];
             
-            [weakSelf yb_tapEffectWithStatus:YES];
+            [self yb_tapEffectWithStatus:YES];
         }
         
     }];
@@ -159,9 +163,33 @@
     
     CGMutablePathRef Path = CGPathCreateMutable();
     
-    CGPathAddRect(Path, NULL, self.frame);
+    CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height));
     
     CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), Path, NULL);
+    
+    CFRange range = CTFrameGetVisibleStringRange(frame);
+    
+    if (self.attributedText.length > range.length) {
+        
+        UIFont *font ;
+        
+        if ([self.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:nil]) {
+            
+            font = [self.attributedText attribute:NSFontAttributeName atIndex:0 effectiveRange:nil];
+            
+        }else if (self.font){
+            font = self.font;
+            
+        }else {
+            font = [UIFont systemFontOfSize:17];
+        }
+        
+        Path = CGPathCreateMutable();
+        
+        CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height + font.lineHeight));
+        
+        frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), Path, NULL);
+    }
     
     CFArrayRef lines = CTFrameGetLines(frame);
     
@@ -316,7 +344,7 @@
         
         NSMutableParagraphStyle *sty = [[NSMutableParagraphStyle alloc] init];
         
-        sty.lineSpacing = 1;
+        sty.lineSpacing = 0;
         
         NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
         
