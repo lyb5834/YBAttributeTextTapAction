@@ -12,6 +12,9 @@
   * 第二种 `[label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] tapClicked:^(NSString *string, NSRange range,NSInteger index) {  coding more... }];`
   * PS:数组里输入的要点击的字符可以重复
 
+#CocoaPods支持
+  * 只需在podfile中输入 `pod 'YBAttributeTextTapAction', '~> 2.0.1'` 即可
+
 #V2.0.0重大更新
   * 修复字体变小时，坐标计算不正确导致无法点击的bug
 
