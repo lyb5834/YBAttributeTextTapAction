@@ -4,6 +4,9 @@
 # 效果图
 ![(演示效果)](http://7xt3dd.com1.z0.glb.clouddn.com/attributeAction.gif)
 
+# Swfit版本
+https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
+
 #使用方法
   * `#import "UILabel+YBAttributeTextTapAction.h"`
   * 设置 `label.attributedText = ？？？？？` 
