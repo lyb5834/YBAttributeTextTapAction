@@ -222,7 +222,13 @@
         
         NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
         
-        CGFloat lineSpace = style.lineSpacing;
+        CGFloat lineSpace;
+        
+        if (style) {
+            lineSpace = style.lineSpacing;
+        }else {
+            lineSpace = 0;
+        }
         
         CGFloat lineOutSpace = (self.bounds.size.height - lineSpace * (count - 1) -rect.size.height * count) / 2;
         
@@ -337,21 +343,6 @@
     self.isTapAction = YES;
     
     self.isTapEffect = YES;
-    
-    NSParagraphStyle *style = [self.attributedText attribute:NSParagraphStyleAttributeName atIndex:0 effectiveRange:nil];
-    
-    if (!style || style.lineSpacing == 0) {
-        
-        NSMutableParagraphStyle *sty = [[NSMutableParagraphStyle alloc] init];
-        
-        sty.lineSpacing = 0;
-        
-        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-        
-        [attStr addAttribute:NSParagraphStyleAttributeName value:sty range:NSMakeRange(0, self.attributedText.string.length)];
-        
-        self.attributedText = attStr;
-    }
     
     __block  NSString *totalStr = self.attributedText.string;
     
