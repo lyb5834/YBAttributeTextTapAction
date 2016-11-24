@@ -194,6 +194,9 @@
     CFArrayRef lines = CTFrameGetLines(frame);
     
     if (!lines) {
+        CFRelease(frame);
+        CFRelease(framesetter);
+        CGPathRelease(Path);
         return NO;
     }
     
@@ -259,11 +262,17 @@
                     if (resultBlock) {
                         resultBlock (model.str , model.range , (NSInteger)j);
                     }
+                    CFRelease(frame);
+                    CFRelease(framesetter);
+                    CGPathRelease(Path);
                     return YES;
                 }
             }
         }
     }
+    CFRelease(frame);
+    CFRelease(framesetter);
+    CGPathRelease(Path);
     return NO;
 }
 

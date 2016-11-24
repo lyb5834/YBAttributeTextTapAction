@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "YBAttributeTextTapAction"
-  s.version      = "2.0.4"
-  s.summary      = "一行代码添加文本点击事件"
+  s.version      = "2.0.5"
+  s.summary      = "一行代码添加文本点击事件/a fast way to implement click event text"
   s.description  = "Code updated by Lyb."
   s.homepage     = "https://github.com/lyb5834/YBAttributeTextTapAction.git"
   s.license      = "MIT"

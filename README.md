@@ -18,6 +18,9 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 #CocoaPods支持
   * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
 
+#V2.0.5修复
+  * 修复内存泄漏
+
 #V2.0.0重大更新
   * 修复字体变小时，坐标计算不正确导致无法点击的bug
 
