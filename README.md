@@ -4,7 +4,7 @@
 # 效果图
 ![(演示效果)](http://7xt3dd.com1.z0.glb.clouddn.com/attributeAction.gif)
 
-# Swfit版本
+# Swfit版本（已更新至swfit3.0）
 https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 
 #使用方法
