@@ -30,6 +30,11 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 #重要提醒
   * 使用本框架时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是行间距，如果不设置，则默认为0！
   * 使用本框架时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
+  
+#问题总结
+  *  因为UILabel的封装，有些属性不能实现，在此说一下一些提的比较多的问题
+  1. label的`textAlignment` 暂时只能是`NSTextAlignmentLeft`，居中和居右会导致无法点击或者点击位置不准确（希望有大神帮忙解决，貌似`NSAttributeString`获取不到`textAlignment`）
+  2. 有人说我居左了，但是还是点击不准确，请查看下是否设置了`NSFontAttributeName`这个属性，还是那句话，不设置的话，coreText上下文获取不到font属性，更别提计算了准确了
 
 #版本支持
   * `xcode6.0+`
