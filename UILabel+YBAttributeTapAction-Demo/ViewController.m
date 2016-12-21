@@ -31,6 +31,7 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     [attributedString1 addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(17, 2)];
     //最好设置一下行高，不设的话默认是0
     NSMutableParagraphStyle *sty = [[NSMutableParagraphStyle alloc] init];
+    sty.alignment = NSTextAlignmentCenter;
     sty.lineSpacing = 5;
     [attributedString1 addAttribute:NSParagraphStyleAttributeName value:sty range:NSMakeRange(0, label_text1.length)];
     
