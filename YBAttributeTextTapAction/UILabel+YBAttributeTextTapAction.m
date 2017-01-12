@@ -184,6 +184,8 @@
             font = [UIFont systemFontOfSize:17];
         }
         
+        CGPathRelease(Path);
+        
         Path = CGPathCreateMutable();
         
         CGPathAddRect(Path, NULL, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height + font.lineHeight));
