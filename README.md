@@ -31,7 +31,7 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
   * 使用本框架时，最好设置一下`NSParagraphStyle中`的`lineSpacing`属性，也就是行间距，如果不设置，则默认为0！
   * 使用本框架时，一定要设置`label.attributedText = ？？？？？` ，不设置则无效果！！
   * 本框架不支持带图片的attributedString！
-  * 超大文本的点击建议使用大型的图文混排框架，本框架适合小文本的点击，例如打电话，跳邮箱等
+  * 超大文本的点击建议使用大型的图文混排框架，本框架适合小文本的点击，例如打电话，跳邮箱等
   
 # 问题总结
   *  因为UILabel的封装，有些属性不能实现，在此说一下一些提的比较多的问题
