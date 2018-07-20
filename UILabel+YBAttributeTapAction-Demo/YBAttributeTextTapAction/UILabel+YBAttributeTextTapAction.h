@@ -31,7 +31,16 @@
 
 
 
-
+/**
+ 点击文字时回调响应的时机，类似于 UIControl 的 event 状态。这里实现两种，可以自行扩展。
+ 
+ - TapStateUpAndDown: 按下去松手
+ - TapStateDown: 一点下去
+ */
+typedef NS_ENUM(NSUInteger, TapState) {
+    TapStateUpAndDown,
+    TapStateDown
+};
 
 @interface UILabel (YBAttributeTextTapAction)
 
@@ -39,6 +48,11 @@
  *  是否打开点击效果，默认是打开
  */
 @property (nonatomic, assign) BOOL enabledTapEffect;
+
+/**
+ 点击的状态，默认为 TapStateUpAndDown
+ */
+@property (nonatomic, assign) TapState tapState;
 
 /**
  *  给文本添加点击事件Block回调

@@ -89,6 +89,14 @@
     objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (void)setTapState:(TapState)tapState {
+    objc_setAssociatedObject(self, @selector(tapState), @(tapState), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (TapState)tapState {
+    return (TapState)objc_getAssociatedObject(self, _cmd);
+}
+
 #pragma mark - mainFunction
 - (void)yb_addAttributeTapActionWithStrings:(NSArray <NSString *> *)strings tapClicked:(void (^) (NSString *string , NSRange range , NSInteger index))tapClick
 {
@@ -120,30 +128,33 @@
         self.isTapEffect = self.enabledTapEffect;
     }
     
-    UITouch *touch = [touches anyObject];
     
-    CGPoint point = [touch locationInView:self];
     
-    __weak typeof(self) weakSelf = self;
-    
-    [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
-        
-        if (weakSelf.tapBlock) {
-            weakSelf.tapBlock (string , range , index);
-        }
-        
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
-            [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
-        }
-        
-        if (self.isTapEffect) {
-            
-            [self yb_saveEffectDicWithRange:range];
-            
-            [self yb_tapEffectWithStatus:YES];
-        }
-        
-    }];
+//    if (self.tapState == TapStateDown) {
+//        UITouch *touch = [touches anyObject];
+//        
+//        CGPoint point = [touch locationInView:self];
+//        
+//        __weak typeof(self) weakSelf = self;
+//        
+//        [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
+//            
+//            if (weakSelf.tapBlock) {
+//                weakSelf.tapBlock (string , range , index);
+//            }
+//            
+//            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
+//                [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
+//            }
+//            
+//            if (self.isTapEffect) {
+//                
+//                [self yb_saveEffectDicWithRange:range];
+//                
+//                [self yb_tapEffectWithStatus:YES];
+//            }
+//        }];
+//    }
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
@@ -157,7 +168,8 @@
 }
 
 #pragma mark - getTapFrame
-- (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (NSString *string , NSRange range , NSInteger index))resultBlock
+//- (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (NSString *string , NSRange range , NSInteger index))resultBlock
+- (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (YBAttributeModel *model, NSInteger index))resultBlock
 {
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attributedText);
     
@@ -262,7 +274,7 @@
                 NSRange link_range = model.range;
                 if (NSLocationInRange(index, link_range)) {
                     if (resultBlock) {
-                        resultBlock (model.str , model.range , (NSInteger)j);
+//                        resultBlock (model.str , model.range , (NSInteger)j);
                     }
                     CFRelease(frame);
                     CFRelease(framesetter);
@@ -280,6 +292,33 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+//    if (self.tapState == TapStateUpAndDown) {
+//        UITouch *touch = [touches anyObject];
+//
+//        CGPoint point = [touch locationInView:self];
+//
+//        __weak typeof(self) weakSelf = self;
+//
+//        [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
+//
+//            if (weakSelf.tapBlock) {
+//                weakSelf.tapBlock (string , range , index);
+//            }
+//
+//            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
+//                [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
+//            }
+//
+//            if (weakSelf.isTapEffect) {
+//
+//                [weakSelf yb_saveEffectDicWithRange:range];
+//
+//                [weakSelf yb_tapEffectWithStatus:YES];
+//            }
+//        }];
+//    }
+    
+    
     if (self.isTapEffect) {
         
         [self performSelectorOnMainThread:@selector(yb_tapEffectWithStatus:) withObject:nil waitUntilDone:NO];

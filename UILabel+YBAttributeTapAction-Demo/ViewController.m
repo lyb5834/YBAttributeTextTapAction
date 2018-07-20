@@ -62,13 +62,29 @@ delegate:nil cancelButtonTitle:(buttonName) otherButtonTitles: nil];\
     }];
     //设置是否有点击效果，默认是YES
     ybLabel2.enabledTapEffect = NO;
+    
+    
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width - 200, 60)];
+    testLabel.text = @"abcdefg";
+    
+    [testLabel yb_addAttributeTapActionWithStrings:@[@"a", @"d"] delegate:self];
+//    [testLabel yb_addAttributeTapActionWithStrings:@[@"a", @"d"] tapClicked:^(NSString *string, NSRange range, NSInteger index) {
+//        UIViewController *vc = [[UIViewController alloc] init];
+//        vc.view.backgroundColor = [UIColor whiteColor];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }];
+    [self.view addSubview:testLabel];
 }
+
 
 //delegate
 - (void)yb_attributeTapReturnString:(NSString *)string range:(NSRange)range index:(NSInteger)index
 {
 //    NSString *message = [NSString stringWithFormat:@"点击了“%@”字符\nrange: %@\nindex: %ld",string,NSStringFromRange(range),index];
 //    YBAlertShow(message, @"取消");
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
