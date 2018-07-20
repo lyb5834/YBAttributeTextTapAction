@@ -89,12 +89,28 @@
     objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (TapState)tapState {
+    return (TapState)objc_getAssociatedObject(self, _cmd);
+}
+
 - (void)setTapState:(TapState)tapState {
     objc_setAssociatedObject(self, @selector(tapState), @(tapState), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (TapState)tapState {
-    return (TapState)objc_getAssociatedObject(self, _cmd);
+- (YBAttributeModel *)selectModel {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setSelectModel:(YBAttributeModel *)selectModel {
+    objc_setAssociatedObject(self, @selector(selectModel), selectModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSInteger)currentIndex {
+    return (NSInteger)objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setCurrentIndex:(NSInteger)currentIndex {
+    objc_setAssociatedObject(self, @selector(currentIndex), @(currentIndex), OBJC_ASSOCIATION_ASSIGN);
 }
 
 #pragma mark - mainFunction
@@ -128,33 +144,38 @@
         self.isTapEffect = self.enabledTapEffect;
     }
     
+    UITouch *touch = [touches anyObject];
     
+    CGPoint point = [touch locationInView:self];
     
-//    if (self.tapState == TapStateDown) {
-//        UITouch *touch = [touches anyObject];
-//        
-//        CGPoint point = [touch locationInView:self];
-//        
-//        __weak typeof(self) weakSelf = self;
-//        
-//        [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
-//            
-//            if (weakSelf.tapBlock) {
-//                weakSelf.tapBlock (string , range , index);
-//            }
-//            
-//            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
-//                [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
-//            }
-//            
-//            if (self.isTapEffect) {
-//                
-//                [self yb_saveEffectDicWithRange:range];
-//                
-//                [self yb_tapEffectWithStatus:YES];
-//            }
-//        }];
-//    }
+    __weak typeof(self) weakSelf = self;
+    
+    [self yb_getTapFrameWithTouchPoint:point result:^(YBAttributeModel *model, NSInteger index) {
+        
+        if (weakSelf.tapState == TapStateDown) {
+            if (weakSelf.isTapEffect) {
+                
+                [weakSelf yb_saveEffectDicWithRange:model.range];
+                
+                [weakSelf yb_tapEffectWithStatus:YES];
+            }
+        }
+        
+        
+//        if (weakSelf.tapBlock) {
+//            weakSelf.tapBlock (string , range , index);
+//        }
+//
+//        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
+//            [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
+//        }
+        
+        
+    }];
+    
+    if (self.tapState == TapStateDown) {
+        
+    }
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
@@ -275,6 +296,7 @@
                 if (NSLocationInRange(index, link_range)) {
                     if (resultBlock) {
 //                        resultBlock (model.str , model.range , (NSInteger)j);
+                        resultBlock(model, j);
                     }
                     CFRelease(frame);
                     CFRelease(framesetter);
