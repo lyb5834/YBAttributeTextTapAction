@@ -38,7 +38,7 @@
  - TapStateDown: 一点下去
  */
 typedef NS_ENUM(NSUInteger, TapState) {
-    TapStateUpAndDown,
+    TapStateUpSideDown,
     TapStateDown
 };
 

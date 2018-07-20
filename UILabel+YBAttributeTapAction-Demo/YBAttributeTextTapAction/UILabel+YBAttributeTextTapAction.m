@@ -90,7 +90,8 @@
 }
 
 - (TapState)tapState {
-    return (TapState)objc_getAssociatedObject(self, _cmd);
+    id tapState = objc_getAssociatedObject(self, _cmd);
+    return [tapState unsignedIntegerValue];
 }
 
 - (void)setTapState:(TapState)tapState {
@@ -106,7 +107,8 @@
 }
 
 - (NSInteger)currentIndex {
-    return (NSInteger)objc_getAssociatedObject(self, _cmd);
+    id index = objc_getAssociatedObject(self, _cmd);
+    return [index integerValue];
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
@@ -152,30 +154,20 @@
     
     [self yb_getTapFrameWithTouchPoint:point result:^(YBAttributeModel *model, NSInteger index) {
         
-        if (weakSelf.tapState == TapStateDown) {
-            if (weakSelf.isTapEffect) {
-                
-                [weakSelf yb_saveEffectDicWithRange:model.range];
-                
-                [weakSelf yb_tapEffectWithStatus:YES];
-            }
+        weakSelf.selectModel = model;
+        weakSelf.currentIndex = index;
+        
+        if (weakSelf.isTapEffect) {
+            [weakSelf yb_saveEffectDicWithRange:model.range];
+            [weakSelf yb_tapEffectWithStatus:YES];
         }
         
-        
-//        if (weakSelf.tapBlock) {
-//            weakSelf.tapBlock (string , range , index);
-//        }
-//
-//        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
-//            [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
-//        }
-        
-        
+        // 如果是一点就响应，
+        if (weakSelf.tapState == TapStateDown) {
+            // 执行回调
+            [weakSelf callback];
+        }
     }];
-    
-    if (self.tapState == TapStateDown) {
-        
-    }
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
@@ -189,7 +181,6 @@
 }
 
 #pragma mark - getTapFrame
-//- (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (NSString *string , NSRange range , NSInteger index))resultBlock
 - (BOOL)yb_getTapFrameWithTouchPoint:(CGPoint)point result:(void (^) (YBAttributeModel *model, NSInteger index))resultBlock
 {
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attributedText);
@@ -295,7 +286,6 @@
                 NSRange link_range = model.range;
                 if (NSLocationInRange(index, link_range)) {
                     if (resultBlock) {
-//                        resultBlock (model.str , model.range , (NSInteger)j);
                         resultBlock(model, j);
                     }
                     CFRelease(frame);
@@ -314,32 +304,11 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-//    if (self.tapState == TapStateUpAndDown) {
-//        UITouch *touch = [touches anyObject];
-//
-//        CGPoint point = [touch locationInView:self];
-//
-//        __weak typeof(self) weakSelf = self;
-//
-//        [self yb_getTapFrameWithTouchPoint:point result:^(NSString *string, NSRange range, NSInteger index) {
-//
-//            if (weakSelf.tapBlock) {
-//                weakSelf.tapBlock (string , range , index);
-//            }
-//
-//            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
-//                [weakSelf.delegate yb_attributeTapReturnString:string range:range index:index];
-//            }
-//
-//            if (weakSelf.isTapEffect) {
-//
-//                [weakSelf yb_saveEffectDicWithRange:range];
-//
-//                [weakSelf yb_tapEffectWithStatus:YES];
-//            }
-//        }];
-//    }
-    
+    // 如果是点击松手后才响应
+    if (self.tapState == TapStateUpSideDown) {
+        // 执行回调
+        [self callback];
+    }
     
     if (self.isTapEffect) {
         
@@ -371,6 +340,26 @@
     CGFloat height = ascent + fabs(descent) + leading;
     
     return CGRectMake(point.x, point.y , width, height);
+}
+
+#pragma mark - CallBack
+- (void)callback {
+    if (!self.selectModel) {
+        return;
+    }
+    
+    if (self.tapBlock) {
+        NSLog(@"currentIndex:%ld", self.currentIndex);
+        self.tapBlock (self.selectModel.str , self.selectModel.range , self.currentIndex);
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(yb_attributeTapReturnString:range:index:)]) {
+        [self.delegate yb_attributeTapReturnString:self.selectModel.str range:self.selectModel.range index:self.currentIndex];
+    }
+    
+    // 清空记录的状态
+    self.selectModel = nil;
+    self.currentIndex = -1;
 }
 
 #pragma mark - tapEffect
