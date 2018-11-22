@@ -16,6 +16,11 @@
 		0C4B4EB01D264AEE00B3F1C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */; };
 		0C4B4EBB1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EBA1D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoTests.m */; };
 		0C4B4EC61D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */; };
+		0CADB3A521A5403C00A54817 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CADB3A321A5403C00A54817 /* HomeTableViewController.m */; };
+		0CADB3A621A5403C00A54817 /* HomeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CADB3A421A5403C00A54817 /* HomeTableViewController.xib */; };
+		0CADB3AF21A639FC00A54817 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CADB3AD21A639FC00A54817 /* HomeCell.m */; };
+		0CADB3B021A639FC00A54817 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CADB3AE21A639FC00A54817 /* HomeCell.xib */; };
+		0CADB3B621A6469B00A54817 /* test_1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0CADB3B521A6469B00A54817 /* test_1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,13 @@
 		0C4B4EC11D264AEE00B3F1C4 /* UILabel+YBAttributeTapAction-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UILabel+YBAttributeTapAction-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4B4EC51D264AEE00B3F1C4 /* UILabel_YBAttributeTapAction_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabel_YBAttributeTapAction_DemoUITests.m; sourceTree = "<group>"; };
 		0C4B4EC71D264AEE00B3F1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CADB3A221A5403C00A54817 /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		0CADB3A321A5403C00A54817 /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		0CADB3A421A5403C00A54817 /* HomeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewController.xib; sourceTree = "<group>"; };
+		0CADB3AC21A639FC00A54817 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		0CADB3AD21A639FC00A54817 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		0CADB3AE21A639FC00A54817 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		0CADB3B521A6469B00A54817 /* test_1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				0C3F7F241D65542B00FD1352 /* YBAttributeTextTapAction */,
-				0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */,
-				0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */,
-				0C4B4EA61D264AEE00B3F1C4 /* ViewController.h */,
-				0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */,
-				0C4B4EA91D264AEE00B3F1C4 /* Main.storyboard */,
+				0CADB3B421A6468500A54817 /* Resources */,
+				0CADB3B321A644C600A54817 /* Home */,
+				0CADB3B221A644A600A54817 /* Other */,
 				0C4B4EAC1D264AEE00B3F1C4 /* Assets.xcassets */,
-				0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */,
 				0C4B4EB11D264AEE00B3F1C4 /* Info.plist */,
 				0C4B4EA01D264AEE00B3F1C4 /* Supporting Files */,
 			);
@@ -151,6 +160,40 @@
 				0C4B4EC71D264AEE00B3F1C4 /* Info.plist */,
 			);
 			path = "UILabel+YBAttributeTapAction-DemoUITests";
+			sourceTree = "<group>";
+		};
+		0CADB3B221A644A600A54817 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0C4B4EA31D264AEE00B3F1C4 /* AppDelegate.h */,
+				0C4B4EA41D264AEE00B3F1C4 /* AppDelegate.m */,
+				0C4B4EA91D264AEE00B3F1C4 /* Main.storyboard */,
+				0C4B4EAE1D264AEE00B3F1C4 /* LaunchScreen.storyboard */,
+				0C4B4EA61D264AEE00B3F1C4 /* ViewController.h */,
+				0C4B4EA71D264AEE00B3F1C4 /* ViewController.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0CADB3B321A644C600A54817 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0CADB3A221A5403C00A54817 /* HomeTableViewController.h */,
+				0CADB3A321A5403C00A54817 /* HomeTableViewController.m */,
+				0CADB3A421A5403C00A54817 /* HomeTableViewController.xib */,
+				0CADB3AC21A639FC00A54817 /* HomeCell.h */,
+				0CADB3AD21A639FC00A54817 /* HomeCell.m */,
+				0CADB3AE21A639FC00A54817 /* HomeCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0CADB3B421A6468500A54817 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CADB3B521A6469B00A54817 /* test_1.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +263,8 @@
 				TargetAttributes = {
 					0C4B4E9C1D264AEE00B3F1C4 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2LJ6D87466;
+						DevelopmentTeam = 4URW8PS6WP;
+						ProvisioningStyle = Manual;
 					};
 					0C4B4EB51D264AEE00B3F1C4 = {
 						CreatedOnToolsVersion = 7.3;
@@ -257,9 +301,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CADB3A621A5403C00A54817 /* HomeTableViewController.xib in Resources */,
 				0C4B4EB01D264AEE00B3F1C4 /* LaunchScreen.storyboard in Resources */,
+				0CADB3B621A6469B00A54817 /* test_1.txt in Resources */,
 				0C4B4EAD1D264AEE00B3F1C4 /* Assets.xcassets in Resources */,
 				0C4B4EAB1D264AEE00B3F1C4 /* Main.storyboard in Resources */,
+				0CADB3B021A639FC00A54817 /* HomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +331,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CADB3AF21A639FC00A54817 /* HomeCell.m in Sources */,
 				0C4B4EA81D264AEE00B3F1C4 /* ViewController.m in Sources */,
+				0CADB3A521A5403C00A54817 /* HomeTableViewController.m in Sources */,
 				0C3F7F291D65B59000FD1352 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				0C4B4EA51D264AEE00B3F1C4 /* AppDelegate.m in Sources */,
 				0C4B4EA21D264AEE00B3F1C4 /* main.m in Sources */,
@@ -428,14 +477,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4URW8PS6WP;
 				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTextTapAction-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chinaums.YBAttributeTextTapAction-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = DevelopInHouse;
 			};
 			name = Debug;
 		};
@@ -443,14 +495,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4URW8PS6WP;
 				INFOPLIST_FILE = "UILabel+YBAttributeTapAction-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Lee.UILabel-YBAttributeTextTapAction-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chinaums.YBAttributeTextTapAction-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = DevelopInHouse;
 			};
 			name = Release;
 		};
