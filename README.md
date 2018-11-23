@@ -12,11 +12,23 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
   * 先设置 `label.attributedText = ？？？？？` 
   * 有2种回调方法，第一种是用代理回调，第二种是用block回调
   * 代理回调
-  *  1.传入要点击的字符串数组`[label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] delegate:self];` 
-  *  2.传入要点击的range数组`[label yb_addAttributeTapActionWithRanges:@[NSStringFromRange(range1),NSStringFromRange(range2)] delegate:self]`
+  *  1.传入要点击的字符串数组
+   ```
+   [label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] delegate:self];
+   ```
+  *  2.传入要点击的range数组
+   ```
+   [label yb_addAttributeTapActionWithRanges:@[NSStringFromRange(range1),NSStringFromRange(range2)] delegate:self]
+   ```
   * block回调
-  * 1.传入要点击的字符串数组 `[label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] tapClicked:^(UILabel *label,NSString *string, NSRange range,NSInteger index) {  coding more... }];`
-  * 2.传入要点击的range数组 `[label yb_addAttributeTapActionWithRanges:@[NSStringFromRange(range1),NSStringFromRange(range2)] tapClicked:^(UILabel *label,NSString *string, NSRange range,NSInteger index) {  coding more... }];`
+  * 1.传入要点击的字符串数组 
+   ```
+   [label yb_addAttributeTapActionWithStrings:@[@"xxx",@"xxx"] tapClicked:^(UILabel *label,NSString *string, NSRange range,NSInteger index) {  coding more... }];
+   ```
+  * 2.传入要点击的range数组 
+   ```
+   [label yb_addAttributeTapActionWithRanges:@[NSStringFromRange(range1),NSStringFromRange(range2)] tapClicked:^(UILabel *label,NSString *string, NSRange range,NSInteger index) {  coding more... }];
+   ```
 
 # CocoaPods支持
   * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
