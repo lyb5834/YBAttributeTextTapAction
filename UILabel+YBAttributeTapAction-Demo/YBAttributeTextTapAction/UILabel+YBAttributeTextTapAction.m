@@ -363,6 +363,9 @@
     
     CFRange range = CTLineGetStringRange(line);
     NSAttributedString * attributedString = [self.attributedText attributedSubstringFromRange:NSMakeRange(range.location, range.length)];
+    if ([attributedString.string hasSuffix:@"\n"] && attributedString.string.length > 1) {
+        attributedString = [attributedString attributedSubstringFromRange:NSMakeRange(0, attributedString.length - 1)];
+    }
     height = [self yb_textSizeWithAttributedString:attributedString width:self.bounds.size.width numberOfLines:0].height;
     return CGRectMake(point.x, point.y , width, height);
 }
@@ -374,6 +377,9 @@
         return 0.;
     }else {
         NSAttributedString * attributedString = [self.attributedText attributedSubstringFromRange:NSMakeRange(0, range.location)];
+        if ([attributedString.string hasSuffix:@"\n"] && attributedString.string.length > 1) {
+            attributedString = [attributedString attributedSubstringFromRange:NSMakeRange(0, attributedString.length - 1)];
+        }
         return [self yb_textSizeWithAttributedString:attributedString width:self.bounds.size.width numberOfLines:0].height;
     }
 }

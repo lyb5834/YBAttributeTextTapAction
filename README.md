@@ -32,6 +32,9 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 
 # CocoaPods支持
   * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
+
+# V3.0.1版本
+  * 修复字符串中有多个"\n"符号时计算不准确的bug
   
 # V3.0.0版本
   * 重构计算文字坐标的算法，点击准确率大大提升（再大的文本都不怕啦）

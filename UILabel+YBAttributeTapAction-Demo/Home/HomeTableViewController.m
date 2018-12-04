@@ -120,7 +120,7 @@ YBAttributeTapActionDelegate
             [cell.testTapLabel yb_addAttributeTapActionWithRanges:@[NSStringFromRange(NSMakeRange(showText.length - 2, 2))] delegate:self];
         }
     }else if (indexPath.section == 1) {
-        NSString * showText = @"如您有任何疑问，请联系lyb5834@126.com,如您有任何疑问，请联系lyb5834@126.com,如您有任何疑问，请联系lyb5834@126.com";
+        NSString * showText = @"如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n\n\n\n如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n\n如您有任何疑问，请联系lyb5834@126.com";
         cell.testTapLabel.attributedText = [self getAttributeWith:@[@"lyb5834@126.com",@"lyb5834@126.com",@"lyb5834@126.com"] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:18 attributeColor:[UIColor blueColor]];
         
         [cell.testTapLabel yb_addAttributeTapActionWithStrings:@[@"lyb5834@126.com",@"lyb5834@126.com",@"lyb5834@126.com"] tapClicked:^(UILabel *label, NSString *string, NSRange range, NSInteger index) {

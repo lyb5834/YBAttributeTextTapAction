@@ -61,7 +61,7 @@
 /**
  *  根据range给文本添加点击事件Block回调
  *
- *  @param strings  需要添加的Range字符串数组
+ *  @param ranges  需要添加的Range字符串数组
  *  @param tapClick 点击事件回调
  */
 - (void)yb_addAttributeTapActionWithRanges:(NSArray <NSString *> *)ranges
@@ -70,7 +70,7 @@
 /**
  *  根据range给文本添加点击事件delegate回调
  *
- *  @param strings  需要添加的Range字符串数组
+ *  @param ranges  需要添加的Range字符串数组
  *  @param delegate delegate
  */
 - (void)yb_addAttributeTapActionWithRanges:(NSArray <NSString *> *)ranges
