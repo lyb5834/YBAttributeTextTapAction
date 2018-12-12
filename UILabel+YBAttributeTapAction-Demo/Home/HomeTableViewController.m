@@ -55,6 +55,7 @@ YBAttributeTapActionDelegate
                        @"点击的字符不同",
                        @"label上加手势",
                        @"点击的字符字体不一",
+                       @"点击的字符不在一行",
                        @"连续跳转"
                        ];
     }
@@ -120,7 +121,7 @@ YBAttributeTapActionDelegate
             [cell.testTapLabel yb_addAttributeTapActionWithRanges:@[NSStringFromRange(NSMakeRange(showText.length - 2, 2))] delegate:self];
         }
     }else if (indexPath.section == 1) {
-        NSString * showText = @"如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n\n\n\n如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n\n如您有任何疑问，请联系lyb5834@126.com";
+        NSString * showText = @"如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n如您有任何疑问，请联系lyb5834@126.com,\n\n\n\n\n如您有任何疑问，请联系lyb5834@126.com";
         cell.testTapLabel.attributedText = [self getAttributeWith:@[@"lyb5834@126.com",@"lyb5834@126.com",@"lyb5834@126.com"] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:18 attributeColor:[UIColor blueColor]];
         
         [cell.testTapLabel yb_addAttributeTapActionWithStrings:@[@"lyb5834@126.com",@"lyb5834@126.com",@"lyb5834@126.com"] tapClicked:^(UILabel *label, NSString *string, NSRange range, NSInteger index) {
@@ -164,6 +165,13 @@ YBAttributeTapActionDelegate
             YBAlertShow(message, @"知道了");
         }];
     }else if (indexPath.section == 5) {
+        NSString * showText = @"本项目在GitHub托管，如对您有帮助，麻烦点个star，地址：https://github.com/lyb5834/YBAttributeTextTapAction，祝你开发愉快！！！";
+        cell.testTapLabel.attributedText = [self getAttributeWith:@[@"https://github.com/lyb5834/YBAttributeTextTapAction"] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:15 attributeColor:[UIColor blueColor]];
+        [cell.testTapLabel yb_addAttributeTapActionWithStrings:@[@"https://github.com/lyb5834/YBAttributeTextTapAction"] tapClicked:^(UILabel *label, NSString *string, NSRange range, NSInteger index) {
+            NSString * message = [NSString stringWithFormat:@"点击了\"%@\"字符\nrange:%@\n在数组中是第%ld个",string,NSStringFromRange(range),index + 1];
+            YBAlertShow(message, @"知道了");
+        }];
+    }else if (indexPath.section == 6) {
         NSString * showText = @"点击\"点我跳下一页\"进入下一页";
         cell.testTapLabel.attributedText = [self getAttributeWith:@[@"\"点我跳下一页\""] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:15 attributeColor:[UIColor blueColor]];
         cell.testTapLabel.tag = 300;
@@ -173,9 +181,59 @@ YBAttributeTapActionDelegate
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section != self.dataArray.count - 1) {
+        return nil;
+    }
+    static NSString * identifier = @"footerView";
+    UITableViewHeaderFooterView * footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    if (!footerView) {
+        footerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:identifier];
+        __block UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(15, 10, [UIScreen mainScreen].bounds.size.width - 30 , 60)];
+        footerView.contentView.backgroundColor = [UIColor yellowColor];
+        [button setImage:[UIImage imageNamed:@"btn_unSel"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"btn_sel"] forState:UIControlStateSelected];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 34, 0)];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+        NSString * showText = @"您已阅读并同意《用户注册协议》《用户使用协议》《用户保密协议》《平台使用守则》《平台免责申明》《网络安全协议》";
+        NSAttributedString * showAttString = [self getAttributeWith:@[@"《用户注册协议》",@"《用户使用协议》",@"《用户保密协议》",@"《平台使用守则》",@"《平台免责申明》",@"《网络安全协议》"] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:15 attributeColor:[UIColor blueColor]];
+        [button setAttributedTitle:showAttString forState:UIControlStateNormal];
+        button.titleLabel.numberOfLines = 0;
+        [footerView.contentView addSubview:button];
+        [button addTarget:self action:@selector(onButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button.titleLabel yb_addAttributeTapActionWithStrings:@[@"您已阅读并同意",@"《用户注册协议》",@"《用户使用协议》",@"《用户保密协议》",@"《平台使用守则》",@"《平台免责申明》",@"《网络安全协议》"] tapClicked:^(UILabel *label, NSString *string, NSRange range, NSInteger index) {
+            
+            if ([string isEqualToString:@"您已阅读并同意"]) {
+                button.selected = !button.selected;
+            }else {
+                NSString * message = [NSString stringWithFormat:@"点击了\"%@\"字符\nrange:%@\n在数组中是第%ld个",string,NSStringFromRange(range),index + 1];
+                YBAlertShow(message, @"知道了");
+            }
+            
+        }];
+    }
+    
+    return footerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section != self.dataArray.count - 1) {
+        return 0;
+    }
+    return 80;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了cell");
+}
+
+#pragma mark - action
+- (void)onButtonClickAction:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
 }
 
 #pragma mark - YBAttributeTapActionDelegate
