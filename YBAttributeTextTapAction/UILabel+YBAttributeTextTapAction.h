@@ -76,5 +76,10 @@
 - (void)yb_addAttributeTapActionWithRanges:(NSArray <NSString *> *)ranges
                                    delegate:(id <YBAttributeTapActionDelegate> )delegate;
 
+/**
+ *  删除label上的点击事件
+ */
+- (void)yb_removeAttributeTapActions;
+
 @end
 

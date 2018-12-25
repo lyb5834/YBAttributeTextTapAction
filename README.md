@@ -32,6 +32,10 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 
 # CocoaPods支持
   * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
+
+# V3.0.3版本
+  * 增加`yb_removeAttributeTapActions`方法，可以删除label上所有的附加点击事件，一般用于复用的cell，防止label上还存在不必要的点击事件
+
 # V3.0.2版本
   * 修复了在8.0系统上crash 的bug
 

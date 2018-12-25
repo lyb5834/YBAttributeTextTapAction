@@ -56,7 +56,8 @@ YBAttributeTapActionDelegate
                        @"label上加手势",
                        @"点击的字符字体不一",
                        @"点击的字符不在一行",
-                       @"连续跳转"
+                       @"连续跳转",
+                       @"没有任何点击效果"
                        ];
     }
     return _dataArray;
@@ -176,6 +177,10 @@ YBAttributeTapActionDelegate
         cell.testTapLabel.attributedText = [self getAttributeWith:@[@"\"点我跳下一页\""] string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:15 attributeColor:[UIColor blueColor]];
         cell.testTapLabel.tag = 300;
         [cell.testTapLabel yb_addAttributeTapActionWithStrings:@[@"\"点我跳下一页\""] delegate:self];
+    }else {
+        NSString * showText = @"此label没有附加任何点击效果\n调用\"yb_removeAttributeTapActions\"方法是为了防止cell复用后，label上还有点击事件";
+        cell.testTapLabel.attributedText = [self getAttributeWith:@"yb_removeAttributeTapActions" string:showText orginFont:15 orginColor:[UIColor darkGrayColor] attributeFont:15 attributeColor:[UIColor redColor]];
+        [cell.testTapLabel yb_removeAttributeTapActions];
     }
     
     return cell;
