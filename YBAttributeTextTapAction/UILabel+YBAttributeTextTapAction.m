@@ -524,9 +524,4 @@
     }
 }
 
-- (void)dealloc
-{
-    [self yb_removeObserver];
-}
-
 @end
