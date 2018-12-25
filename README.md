@@ -32,6 +32,8 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 
 # CocoaPods支持
   * 只需在podfile中输入 `pod 'YBAttributeTextTapAction'` 即可
+# V3.0.2版本
+  * 修复了在8.0系统上crash 的bug
 
 # V3.0.1版本
   * 修复字符串中有多个"\n"符号时计算不准确的bug
