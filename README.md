@@ -62,6 +62,11 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
   
 # 问题总结
   *  因为UILabel的封装，有些属性不能实现，在此说一下一些提的比较多的问题
+  *  必须设置字体属性,不然点击范围会不准确，重要的事情说三遍
+  *  必须设置字体属性！必须设置字体属性！必须设置字体属性！
+   ```
+   [totalStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:orginFont] range:NSMakeRange(0, string.length)];
+   ```
   * 关于文字排版的正确设置方式，设置`label.textAlignment = NSTextAlignmentCenter`会导致点击失效，正确的设置方法是    
   ```
       NSMutableParagraphStyle *sty = [[NSMutableParagraphStyle alloc] init];
