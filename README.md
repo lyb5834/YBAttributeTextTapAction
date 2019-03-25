@@ -4,7 +4,7 @@
 # 效果图
 ![(演示效果)](https://lyb5834.github.io/Images/attributeTapAction.gif)
 
-# Swfit版本（最新版还未更新）
+# Swfit版本（最新版还未更新，可直接集成OC版本）
 https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
 
 # 使用方法
