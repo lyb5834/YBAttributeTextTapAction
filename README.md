@@ -50,20 +50,14 @@ https://github.com/lyb5834/YBAttributeTextTapForSwfit.git
   * 重构demo，介绍更详细，用法更丰富
   * 修复一个页面多次调用会相互影响的bug
   * 修复在label上添加手势无效的bug
-
-# V2.0.5修复
-  * 修复内存泄漏
-
-# V2.0.0重大更新
-  * 修复字体变小时，坐标计算不正确导致无法点击的bug
-
-# V2.1.0更新
-  * 增加点击效果，默认是开启，关闭只需设置`label.enabledTapEffect = NO`即可
   
 # 问题总结
   *  因为UILabel的封装，有些属性不能实现，在此说一下一些提的比较多的问题
-  *  必须设置字体属性,不然点击范围会不准确，重要的事情说三遍
-  *  必须设置字体属性！必须设置字体属性！必须设置字体属性！
+  
+  ###  必须设置字体属性,不然点击范围会不准确，重要的事情说三遍
+  ###  必须设置字体属性！必须设置字体属性！必须设置字体属性！
+  
+  eg:
    ```
    [totalStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:orginFont] range:NSMakeRange(0, string.length)];
    ```
